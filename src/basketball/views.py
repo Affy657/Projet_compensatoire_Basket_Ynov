@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .api import get_players, get_player_detail
 from .api import get_teams, get_team_detail
-from .api import get_matches#, get_match_detail
+from .api import get_matches, get_match_detail
 
 def players_view(request):
     players = get_players()
@@ -25,7 +25,7 @@ def matches_view(request):
     matches = get_matches()
     return render(request, "matches.html", {"matches": matches})
 
-#def match_detail_view(request, match_id):
-#    match = get_match_detail(match_id)
-#    return render(request, "match_detail.html", {"match": match})
+def match_detail_view(request, match_id):
+    match = get_match_detail(match_id)
+    return render(request, "match_detail.html", {"match": match})
 

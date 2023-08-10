@@ -5,13 +5,11 @@
 {% block content %}
 <h1>Liste des Matchs</h1>
 <ul>
-    {% for matche in matches %}
+    {% for match in matches %}
         <li>
-            {{ matche.date }} - {{ matche.home_team.full_name }} VS {{ matche.visitor_team.full_name }}
+            <a href="{% url 'match_detail' match.id %}">{{ match.date }} - {{ match.home_team.full_name }} VS {{ match.visitor_team.full_name }}</a>
             <br>
         </li>
     {% endfor %}
 </ul>
-</body>
-</html>
 {% endblock %}

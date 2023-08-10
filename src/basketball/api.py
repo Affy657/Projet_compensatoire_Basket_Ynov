@@ -48,4 +48,12 @@ def get_matches():
     else:
         return None
 
+def get_match_detail(match_id):
+    url = f"https://www.balldontlie.io/api/v1/games/{match_id}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        match = response.json()
+        return match
+    else:
+        return None
 
