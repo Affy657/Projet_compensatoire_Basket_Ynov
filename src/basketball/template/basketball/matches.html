@@ -1,0 +1,12 @@
+{% extends './base.html' %}
+
+{% block title %}Match: {{ match.home_team }} VS {{ match.visitor_team }}{% endblock %}
+
+{% block content %}
+    <h1>Match Details</h1>
+    <div class="match-details">
+        <p><strong>Date:</strong> {{ match.date|date:"d-m-Y" }}</p>
+        
+        <p><strong>Score:</strong> {{ match.score }}</p>
+    </div>
+{% endblock %}

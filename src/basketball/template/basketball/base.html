@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Ynov Basket{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Ynov Basket</h1>
+        <nav>
+            <li><a href="{% url 'players_view' %}">Joueurs</a></li>
+            <li><a href="{% url 'teams_view' %}">Équipes</a></li>
+            <li><a href="{% url 'matches_view' %}">Matchs</a></li>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2023 Ynov Basket</p>
+    </footer>
+</body>
+</html>

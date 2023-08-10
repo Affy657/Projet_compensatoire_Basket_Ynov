@@ -57,7 +57,7 @@ ROOT_URLCONF = 'Projet_compensatoire_Basket_Ynov.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "Projet_compensatoire_Basket_Ynov/template")],
+        'DIRS': [os.path.join(BASE_DIR, "Projet_compensatoire_Basket_Ynov/template"),os.path.join(BASE_DIR, "basketball/template/basketball")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
