@@ -1,0 +1,10 @@
+{% extends './base.html' %}
+
+{% block content %}
+<h1>{{ team.full_name }} ({{ team.abbreviation }})</h1>
+    <p>Ville: {{ team.city }}</p>
+    <p>Conférence: {{ team.conference }}</p>
+    <p>Division: {{ team.division }}</p>
+    <p>Nom de l'équipe: {{ team.name }}</p>
+    
+{% endblock %}

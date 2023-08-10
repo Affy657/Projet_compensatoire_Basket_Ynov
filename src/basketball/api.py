@@ -9,6 +9,15 @@ def get_players():
         return players
     else:
         return None
+    
+def get_player_detail(player_id):
+    url = f"https://www.balldontlie.io/api/v1/players/{player_id}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        player = response.json()
+        return player
+    else:
+        return None
 
 def get_teams():
     url = "http://www.balldontlie.io/api/v1/teams"
@@ -17,6 +26,15 @@ def get_teams():
         teams_data = response.json()
         teams = teams_data["data"]
         return teams
+    else:
+        return None
+    
+def get_team_detail(team_id):
+    url = f"https://www.balldontlie.io/api/v1/teams/{team_id}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        team = response.json()
+        return team
     else:
         return None
 

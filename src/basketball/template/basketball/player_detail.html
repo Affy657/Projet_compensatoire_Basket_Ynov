@@ -1,0 +1,16 @@
+{% extends './base.html' %}
+
+{% block content %}
+<h1>{{ player.first_name }} {{ player.last_name }}</h1>
+<p>Position: {{ player.position }}</p>
+<p>Hauteur: {{ player.height_feet }} pieds, {{ player.height_inches }} pouces</p>
+<p>Poids: {{ player.weight_pounds }} livres</p>
+<h2>Équipe: {{ player.team.full_name }} ({{ player.team.abbreviation }})</h2>
+<!-- Vous pouvez ajouter un lien vers la page de détails de l'équipe ici -->
+<p>Ville: {{ player.team.city }}</p>
+<p>Conférence: {{ player.team.conference }}</p>
+<p>Division: {{ player.team.division }}</p>
+<p>Nom complet de l'équipe: {{ player.team.full_name }}</p>
+<p>Nom de l'équipe: {{ player.team.name }}</p>
+    
+{% endblock %}
