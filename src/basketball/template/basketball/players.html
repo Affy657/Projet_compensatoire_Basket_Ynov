@@ -1,13 +1,13 @@
 {% extends './base.html' %}
 
 {% block content %}
-  <h1>Liste des Joueurs</h1>
-  <div class="players">
+<h1>Liste des Joueurs</h1>
+<ul>
     {% for player in players %}
-      <div class="player-card">
-        <p>Nom : {{ player.name }}</p>
-        <p>Prénom : {{ player.first_name }}</p>
-      </div>
+        <li>
+            {{ player.first_name }} {{ player.last_name }}
+            <br>
+        </li>
     {% endfor %}
-  </div>
+</ul>
 {% endblock %}

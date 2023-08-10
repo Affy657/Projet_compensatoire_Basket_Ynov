@@ -2,11 +2,12 @@
 
 {% block content %}
   <h1>Liste des Équipes</h1>
-  <div class="teams">
+  <ul>
     {% for team in teams %}
-      <div class="team-card">
-        <p>Nom : {{ team.name }}</p>
-      </div>
+        <li>
+            {{ team.full_name }}
+            <br>
+        </li>
     {% endfor %}
-  </div>
+</ul>
 {% endblock %}

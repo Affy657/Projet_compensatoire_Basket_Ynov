@@ -3,10 +3,15 @@
 {% block title %}Match: {{ match.home_team }} VS {{ match.visitor_team }}{% endblock %}
 
 {% block content %}
-    <h1>Match Details</h1>
-    <div class="match-details">
-        <p><strong>Date:</strong> {{ match.date|date:"d-m-Y" }}</p>
-        
-        <p><strong>Score:</strong> {{ match.score }}</p>
-    </div>
+<h1>Liste des Matchs</h1>
+<ul>
+    {% for matche in matches %}
+        <li>
+            {{ matche.date }} - {{ matche.home_team.full_name }} VS {{ matche.visitor_team.full_name }}
+            <br>
+        </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
 {% endblock %}
