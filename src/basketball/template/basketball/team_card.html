@@ -1,0 +1,6 @@
+<div class="team-card">
+    <h3>{{ team.full_name }}</h3>
+    <p>Abbréviation: {{ team.abbreviation }}</p>
+    <p>Ville: {{ team.city }}</p>
+    <p><a href="{% url 'team_detail' team.id %}">Voir les détails</a></p>
+</div>

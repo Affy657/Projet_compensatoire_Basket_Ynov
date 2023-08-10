@@ -5,6 +5,9 @@
     <p>Ville: {{ team.city }}</p>
     <p>Conférence: {{ team.conference }}</p>
     <p>Division: {{ team.division }}</p>
-    <p>Nom de l'équipe: {{ team.name }}</p>
+    <h2>Joueurs</h2>
+    {% for player in players %}
+        {% include 'player_card.html' with player=player %}
+    {% endfor %}
     
 {% endblock %}

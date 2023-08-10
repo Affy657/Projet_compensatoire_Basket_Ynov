@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'basketball',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

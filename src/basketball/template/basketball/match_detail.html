@@ -10,8 +10,9 @@
     <p>Status: {{ match.status }}</p>
     <p>Post-saison: {{ match.postseason }}</p>
     <h2>Équipe à domicile</h2>
-    <p>{{ match.home_team.full_name }}</p>
+    {% include 'team_card.html' with team=match.home_team %}
+    
     <h2>Équipe visiteuse</h2>
-    <p>{{ match.visitor_team.full_name }}</p>
+    {% include 'team_card.html' with team=match.visitor_team %}
     
 {% endblock %}

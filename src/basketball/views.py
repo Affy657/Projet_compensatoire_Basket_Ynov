@@ -20,7 +20,6 @@ def team_detail_view(request, team_id):
     team = get_team_detail(team_id)
     return render(request, "team_detail.html", {"team": team})
 
-
 def matches_view(request):
     matches = get_matches()
     return render(request, "matches.html", {"matches": matches})

@@ -6,7 +6,7 @@
 <p>Hauteur: {{ player.height_feet }} pieds, {{ player.height_inches }} pouces</p>
 <p>Poids: {{ player.weight_pounds }} livres</p>
 <h2>Équipe: {{ player.team.full_name }} ({{ player.team.abbreviation }})</h2>
-<!-- Vous pouvez ajouter un lien vers la page de détails de l'équipe ici -->
+{% include 'team_card.html' with team=player.team %}
 <p>Ville: {{ player.team.city }}</p>
 <p>Conférence: {{ player.team.conference }}</p>
 <p>Division: {{ player.team.division }}</p>

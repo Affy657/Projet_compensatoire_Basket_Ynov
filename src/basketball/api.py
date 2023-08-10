@@ -1,4 +1,7 @@
 import requests
+from rest_framework import status
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
 
 def get_players():
     url = "http://www.balldontlie.io/api/v1/players"
@@ -56,4 +59,26 @@ def get_match_detail(match_id):
         return match
     else:
         return None
+"""
+@api_view(['GET'])
+def team_players(request, team_id):
+    players_data = []
+    page = 0
 
+    
+    while True:
+        response = requests.get(f"https://www.balldontlie.io/api/v1/players?page={page}")
+        all_players_data = response.json()['data']
+        
+        
+        filtered_players = [player for player in all_players_data if player['team']['id'] == team_id]
+        players_data.extend(filtered_players)
+        
+        
+        if response.json().get('meta').get('next_page') is None:
+            break
+            
+        page += 1
+
+    return Response(players_data, status=status.HTTP_200_OK)
+"""
