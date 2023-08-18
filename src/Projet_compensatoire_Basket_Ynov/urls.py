@@ -23,7 +23,6 @@ from basketball.views import players_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/',include('accounts.urls')),
-    path('home/' , TemplateView.as_view(template_name="index.html")),
     path('basketball/', include('basketball.urls')),
     path('', players_view, name='players_view'),
 ]
