@@ -1,19 +1,34 @@
-<!DOCTYPE html>
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'image/favicon.png' %}" >
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
+
 <body>
-<h2>Registration form</h2>
-<form method="POST">
-  {% csrf_token %}
-  <fieldset class="form-group">
-    {{ form.as_p }}
-  </fieldset>
-  <div class="form-group">
-    <button class="btn btn-outline-info" type="submit">Register</button>
-  </div>
-</form>
+{% if user.is_authenticated %}
+    Vous êtes connecté en tant que <strong>{{ user.username }}!</strong>
+    <a href="/accounts/logout">Se déconnecter !</a>
+{% else %}
+<div class="container">
+    <form method="post" class="login-form">
+        {% csrf_token %}
+        <h1 class="login-title">Inscription</h1>
+        
+        {% for field in form %}
+        <label for="{{ field.id_for_label }}" class="login-label">{{ field.label }}</label>
+        <input type="{{ field.field.widget.input_type }}" id="{{ field.id_for_label }}" class="login-input" name="{{ field.name }}" required>
+        {% endfor %}
+        
+        <button type="submit" class="login-button">S'inscrire</button>
+        <a href="{% url 'login' %}" class="login-link">Se connecter</a>
+    </form>
+</div>
+{% endif %}
 </body>
 </html>
