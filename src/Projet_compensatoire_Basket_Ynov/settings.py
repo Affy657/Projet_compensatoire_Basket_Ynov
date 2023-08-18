@@ -122,6 +122,10 @@ USE_TZ = True
 STATIC_URL = 'static/'
 LOGOUT_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = '/'
+STATICFILES_DIRS =[
+    os.path.join(BASE_DIR, "Projet_compensatoire_Basket_Ynov/static"),
+    os.path.join(BASE_DIR, "static/image")
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

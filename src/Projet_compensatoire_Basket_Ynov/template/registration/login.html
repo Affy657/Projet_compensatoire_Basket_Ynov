@@ -1,14 +1,33 @@
-<!-- templates/registration/login.html -->
-<!-- we test if the user is authenticated -->
+{% load static %}
+
+<head>
+  <html lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'image/favicon.png' %}" >
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <!-- Autres métadonnées et liens ici -->
+</head>
+
 {% if user.is_authenticated %}
-    You are connected as <strong> {{ user.username }}!</strong>
-    <a href="/accounts/logout" >Logout !</a>
-<!-- if user is not authenticated, we display the authentication form: -->   
+    Vous êtes connecté en tant que <strong>{{ user.username }}!</strong>
+    <a href="/accounts/logout">Se déconnecter !</a>
 {% else %}
-<h3>Log In</h3>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Log In</button>
-</form>
+
+<div class="container">
+    <form method="post" class="login-form">
+        {% csrf_token %}
+        <h1 class="login-title">Connectez-vous</h1>
+        
+        {% for field in form %}
+        <label for="{{ field.id_for_label }}" class="login-label">{{ field.label }}</label>
+        <input type="{{ field.field.widget.input_type }}" id="{{ field.id_for_label }}" class="login-input" name="{{ field.name }}" required>
+        {% endfor %}
+        
+        <button type="submit" class="login-button">Se connecter</button>
+    </form>
+</div>
 {% endif %}
+
