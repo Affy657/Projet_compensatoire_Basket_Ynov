@@ -49,7 +49,7 @@ Pour installer et exécuter le projet, suivez les étapes ci-dessous :
 
     python manage.py runserver
 
-**Le projet sera accessible à l'adresse http://localhost:3000** 
+**Le projet sera accessible à l'adresse http://localhost:8000** 
 
 
 N'hésitez pas à me contacter pour toute question concernant ce projet.
