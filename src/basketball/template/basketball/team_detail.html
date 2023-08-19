@@ -1,13 +1,20 @@
 {% extends './base.html' %}
 
 {% block content %}
-<h1>{{ team.full_name }} ({{ team.abbreviation }})</h1>
-    <p>Ville: {{ team.city }}</p>
-    <p>Conférence: {{ team.conference }}</p>
-    <p>Division: {{ team.division }}</p>
-    <h2>Joueurs</h2>
+<h1 class="team-title">{{ team.full_name }} ({{ team.abbreviation }})</h1>
+
+<div class="team-details">
+    <h2>Informations sur l'équipe</h2>
+    <p><strong>Ville :</strong> {{ team.city }}</p>
+    <p><strong>Conférence :</strong> {{ team.conference }}</p>
+    <p><strong>Division :</strong> {{ team.division }}</p>
+</div>
+
+<h2>Joueurs</h2>
+<div class="cards-container">
     {% for player in players %}
         {% include 'player_card.html' with player=player %}
     {% endfor %}
-    
+</div>
+
 {% endblock %}

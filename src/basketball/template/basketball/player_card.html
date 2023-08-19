@@ -1,5 +1,5 @@
-<div class="player-card">
-    <h3>{{ player.first_name }} {{ player.last_name }}</h3>
-    <p>Position: {{ player.position }}</p>
-    <a href="{% url 'player_detail' player.id %}">Plus de détails</a>
-</div>
+<a href="{% url 'player_detail' player.id %}" class="card player-card">
+    <h3 class="card-title">{{ player.first_name }} {{ player.last_name }}</h3>
+    <p><strong>Position :</strong> {{ player.position }}</p>
+</a>
+

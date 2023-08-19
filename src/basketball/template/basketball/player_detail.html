@@ -1,16 +1,22 @@
 {% extends './base.html' %}
 
 {% block content %}
-<h1>{{ player.first_name }} {{ player.last_name }}</h1>
-<p>Position: {{ player.position }}</p>
-<p>Hauteur: {{ player.height_feet }} pieds, {{ player.height_inches }} pouces</p>
-<p>Poids: {{ player.weight_pounds }} livres</p>
-<h2>Équipe: {{ player.team.full_name }} ({{ player.team.abbreviation }})</h2>
+<h1 class="player-title">{{ player.first_name }} {{ player.last_name }}</h1>
+
+<div class="player-details">
+    <h2>Informations sur le joueur</h2>
+    <p><strong>Position :</strong> {{ player.position }}</p>
+    <p><strong>Hauteur :</strong> {{ player.height_feet }} pieds, {{ player.height_inches }} pouces</p>
+    <p><strong>Poids :</strong> {{ player.weight_pounds }} livres</p>
+</div>
+
+<div class="team-details">
+    <h2>Informations sur l'équipe</h2>
+    <p><strong>Nom de l'équipe :</strong> {{ player.team.full_name }} ({{ player.team.abbreviation }})</p>
+    <p><strong>Ville :</strong> {{ player.team.city }}</p>
+    <p><strong>Conférence :</strong> {{ player.team.conference }}</p>
+    <p><strong>Division :</strong> {{ player.team.division }}</p>
+</div>
 {% include 'team_card.html' with team=player.team %}
-<p>Ville: {{ player.team.city }}</p>
-<p>Conférence: {{ player.team.conference }}</p>
-<p>Division: {{ player.team.division }}</p>
-<p>Nom complet de l'équipe: {{ player.team.full_name }}</p>
-<p>Nom de l'équipe: {{ player.team.name }}</p>
-    
+
 {% endblock %}

@@ -1,18 +1,24 @@
 {% extends './base.html' %}
 
 {% block content %}
-<h1>{{ match.home_team.full_name }} VS {{ match.visitor_team.full_name }}</h1>
-    <p>Date: {{ match.date }}</p>
-    <p>Score de l'équipe à domicile: {{ match.home_team_score }}</p>
-    <p>Score de l'équipe visiteuse: {{ match.visitor_team_score }}</p>
-    <p>Saison: {{ match.season }}</p>
-    <p>Période: {{ match.period }}</p>
-    <p>Status: {{ match.status }}</p>
-    <p>Post-saison: {{ match.postseason }}</p>
-    <h2>Équipe à domicile</h2>
-    {% include 'team_card.html' with team=match.home_team %}
-    
-    <h2>Équipe visiteuse</h2>
-    {% include 'team_card.html' with team=match.visitor_team %}
-    
+
+<h1 class="match-title">{{ match.home_team.full_name }} VS {{ match.visitor_team.full_name }}</h1>
+
+<div class="match-details">
+    <h2>Informations sur le match</h2>
+    <p><strong>Date :</strong> {{ match.date }}</p>
+    <p><strong>Score de l'équipe à domicile :</strong> {{ match.home_team_score }}</p>
+    <p><strong>Score de l'équipe visiteuse :</strong> {{ match.visitor_team_score }}</p>
+    <p><strong>Saison :</strong> {{ match.season }}</p>
+    <p><strong>Période :</strong> {{ match.period }}</p>
+    <p><strong>Status :</strong> {{ match.status }}</p>
+    <p><strong>Post-saison :</strong> {{ match.postseason }}</p>
+</div>
+
+<h2 class="team-title">Équipe à domicile</h2>
+{% include 'team_card.html' with team=match.home_team %}
+
+<h2 class="team-title">Équipe visiteuse</h2>
+{% include 'team_card.html' with team=match.visitor_team %}
+
 {% endblock %}
