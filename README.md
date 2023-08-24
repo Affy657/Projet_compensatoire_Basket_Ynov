@@ -47,7 +47,7 @@ Pour installer et exécuter le projet, suivez les étapes ci-dessous :
     python manage.py migrate
 ## Utilisation
 
-    python manage.py runserver
+    python src/manage.py runserver
 
 **Le projet sera accessible à l'adresse http://localhost:8000** 
 
